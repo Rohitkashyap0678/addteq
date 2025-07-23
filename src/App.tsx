@@ -1,4 +1,3 @@
-import React from 'react'
 import { ComparisonProvider } from './context/ComparisonContext'
 import { ThemeProvider } from './context/ThemeContext'
 import { Header } from './components/Header'
