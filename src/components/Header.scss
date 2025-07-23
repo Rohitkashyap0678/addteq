@@ -1,0 +1,158 @@
+.header {
+  background: white;
+  border-bottom: 1px solid #e5e7eb;
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.95);
+
+  &__content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: #2563eb;
+
+    h1 {
+      margin: 0;
+      font-size: 1.75rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  &__comparison-count {
+    background: #f3f4f6;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #374151;
+    border: 1px solid #d1d5db;
+  }
+
+  &__theme-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #d1d5db;
+    background: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: #6b7280;
+
+    &:hover {
+      background: #f9fafb;
+      color: #374151;
+      transform: scale(1.05);
+    }
+  }
+}
+
+// Dark theme styles
+[data-theme='dark'] {
+  .header {
+    background: rgba(17, 24, 39, 0.95);
+    border-bottom-color: #374151;
+
+    &__logo {
+      color: #60a5fa;
+
+      h1 {
+        background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+    }
+
+    &__comparison-count {
+      background: #374151;
+      color: #d1d5db;
+      border-color: #4b5563;
+    }
+
+    &__theme-toggle {
+      background: #374151;
+      border-color: #4b5563;
+      color: #d1d5db;
+
+      &:hover {
+        background: #4b5563;
+        color: #f3f4f6;
+      }
+    }
+  }
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+  .header {
+    &__content {
+      padding: 0 1rem;
+    }
+
+    &__logo {
+      h1 {
+        font-size: 1.5rem;
+      }
+    }
+
+    &__comparison-count {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    &__content {
+      padding: 0 0.75rem;
+    }
+
+    &__logo {
+      gap: 0.5rem;
+
+      h1 {
+        font-size: 1.25rem;
+      }
+
+      svg {
+        width: 24px;
+        height: 24px;
+      }
+    }
+
+    &__theme-toggle {
+      width: 36px;
+      height: 36px;
+
+      svg {
+        width: 16px;
+        height: 16px;
+      }
+    }
+  }
+} 
